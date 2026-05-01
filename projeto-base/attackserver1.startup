@@ -1,5 +1,5 @@
-ifconfig eth0 1.2.5.1/24 up
-route add default gw 1.2.5.254
+ifconfig eth0 16.2.5.1/24 up
+route add default gw 16.2.5.254
 
-# Servico Emulado de Ataques (Porta 40000 + 15)
+# Servidor emulado de ataques (Porta 40000 + 15)
 nc -l -p 40015 &
