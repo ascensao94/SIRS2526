@@ -1,5 +1,8 @@
 ifconfig eth0 16.2.2.1/24 up
 ifconfig eth1 6.6.6.1/24 up
 
-# Rota para a rede da Cloud
+# Rota para a rede da Cloud (IDA)
 route add -net 20.4.3.0/24 gw 6.6.6.2
+
+# Rota para as redes internas do escritorio usando netmask explicita (REGRESSO)
+route add -net 16.2.0.0 netmask 255.255.240.0 gw 16.2.2.2
