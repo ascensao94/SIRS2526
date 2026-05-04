@@ -1,5 +1,5 @@
 ifconfig eth0 16.2.3.2/24 up
 route add default gw 16.2.3.254
 
-# Servidor emulado de desenvolvimento (Porta 30000 + 15)
+# Servico Emulado de Desenvolvimento
 nc -l -p 30015 &

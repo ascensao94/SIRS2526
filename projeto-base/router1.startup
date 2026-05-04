@@ -1,7 +1,5 @@
-ifconfig eth0 1.2.2.1/24 up
+ifconfig eth0 16.2.2.1/24 up
 ifconfig eth1 6.6.6.1/24 up
-ip route add 1.2.0.0/20 via 1.2.2.2
-ip route add 0.0.0.0/0 via 6.6.6.2
 
-
-
+# Rota para a rede da Cloud
+route add -net 20.4.3.0/24 gw 6.6.6.2

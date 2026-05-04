@@ -1,5 +1,5 @@
 ifconfig eth0 20.4.3.1/24 up
 route add default gw 20.4.3.254
 
-# Servidor emulado para clientes (Porta 25000 + 15)
+# Servico Emulado para clientes
 nc -l -p 25015 &
