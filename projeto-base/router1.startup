@@ -10,7 +10,12 @@ route add -net 16.2.0.0 netmask 255.255.240.0 gw 16.2.2.2
 #IP forwarding — necessário para encaminhar pacotes do tun0 para eth0
 echo 1 > /proc/sys/net/ipv4/ip_forward
 
-#instalar OpenVPN + easy-rsa 
+# Limpar certs antigos do /shared/ para evitar race condition
+# (os clientes esperam por ca.crt — se existir do run anterior, usam chaves velhas)
+rm -rf /shared/vpn-ana /shared/vpn-bento
+
+
+# === Instalar OpenVPN + easy-rsa ===
 apt-get update && apt-get install -y openvpn easy-rsa
 
 #preparar easy-rsa
@@ -19,8 +24,7 @@ cp /etc/openvpn/easy-rsa/vars.example /etc/openvpn/easy-rsa/vars
 
 #configurar vars
 cat >> /etc/openvpn/easy-rsa/vars << 'EOF'
-set_var EASYRSA_REQ_COUNTRY   "PT"
-set_var EASYRSA_REQ_PROVINCE  "Lisboa"
+set_var EASYRSA_REQ_COUNTRY   "PORTUGAL"
 set_var EASYRSA_REQ_CITY      "Oeiras"
 set_var EASYRSA_REQ_ORG       "RedVector"
 set_var EASYRSA_REQ_EMAIL     "geral@redvector.pt"

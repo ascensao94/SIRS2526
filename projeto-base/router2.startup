@@ -4,5 +4,8 @@ ifconfig eth2 16.2.4.254/24 up
 ifconfig eth3 16.2.5.254/24 up
 ifconfig eth4 16.2.6.254/24 up
 
+# IP forwarding — necessário para encaminhar entre subredes
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
 # Tudo o que vai para fora (Internet/Cloud) vai para o router1
 route add default gw 16.2.2.1

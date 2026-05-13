@@ -1,0 +1,84 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            41:a2:2f:84:89:b9:69:7d:71:22:c7:79:99:e0:de:d0
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN=RedVector-CA
+        Validity
+            Not Before: May 13 12:21:28 2026 GMT
+            Not After : Apr 27 12:21:28 2029 GMT
+        Subject: CN=RedVector-CA
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:bb:f0:dd:47:86:02:6f:b7:b2:48:4d:36:32:4c:
+                    39:b2:c9:70:8e:25:f5:45:19:48:d7:80:d1:41:57:
+                    26:fc:13:57:79:26:fd:b0:f6:61:46:c0:c9:63:1c:
+                    13:85:58:c0:fe:b1:4a:af:8f:b0:14:39:05:a1:1b:
+                    bc:62:67:ba:5f:b0:9d:ed:33:e1:77:59:be:fc:12:
+                    09:98:da:a1:1f:16:9c:70:07:00:b1:91:79:81:78:
+                    00:9b:ee:8d:15:94:43:6d:da:cc:b1:93:70:33:cd:
+                    64:3e:2a:1d:55:9c:60:8a:b3:d9:5f:1f:bf:d5:5e:
+                    88:77:39:aa:fc:55:e0:d0:bb:55:23:8d:48:0a:18:
+                    7d:b8:d8:68:dd:b0:b0:ca:26:e2:7a:49:c5:eb:95:
+                    64:c4:1d:75:40:16:86:a9:b0:88:54:22:af:df:c7:
+                    5b:13:fe:94:c9:f0:83:d8:3f:b5:65:8f:97:62:65:
+                    75:3d:ac:74:5b:81:9c:4a:f3:6d:a2:e8:5a:c4:b9:
+                    3c:2a:16:7d:f2:f2:d5:14:17:10:bc:ef:79:dd:c0:
+                    a1:6c:b3:08:75:11:cd:0b:46:8b:77:e8:19:3a:e7:
+                    1a:c8:7d:d4:c1:b2:b7:4c:9d:7a:9a:85:01:bb:a4:
+                    8d:a5:c6:1d:3c:25:bf:d4:1d:5d:7e:6a:2e:f8:fc:
+                    cf:1f
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                F8:B3:19:20:43:7E:D2:04:6D:D1:4C:2B:C2:55:D3:DA:84:8D:5D:76
+            X509v3 Authority Key Identifier: 
+                keyid:01:00:AA:3B:B7:63:E0:96:3E:55:30:47:5E:F9:EE:06:52:2B:03:22
+                DirName:/CN=RedVector-CA
+                serial:6D:9E:2C:07:73:4C:E1:DB:25:1B:BC:A5:38:84:F7:FE:D7:52:F6:FB
+
+            X509v3 Extended Key Usage: 
+                TLS Web Client Authentication
+            X509v3 Key Usage: 
+                Digital Signature
+    Signature Algorithm: sha256WithRSAEncryption
+         22:4b:8e:9f:5a:b0:4b:dc:dd:e0:23:64:cc:8e:84:e0:6a:19:
+         7c:f1:54:be:ef:45:44:1c:e2:5d:f9:fb:4e:19:19:f9:95:85:
+         e7:06:d2:a0:6b:e6:08:13:24:2a:79:44:de:7c:34:73:7c:9f:
+         49:35:0f:98:59:f5:49:99:ee:ca:1c:47:2b:57:76:4b:19:7b:
+         8b:49:a1:69:1f:8a:96:dc:6a:f3:4d:a8:fe:6f:ac:1c:77:4e:
+         f7:b9:4e:cf:76:d1:06:ef:b6:ea:99:7f:7c:09:5f:dd:b5:28:
+         24:0b:00:21:b9:91:08:39:8e:a0:9d:7b:96:b4:ef:d3:9b:34:
+         dd:42:b8:a9:8e:3b:5d:10:3d:8d:e7:0f:a7:91:14:25:86:b6:
+         e5:68:1b:08:49:24:63:c3:3c:2b:1f:0a:46:1c:80:9d:b6:c2:
+         bf:c4:fb:28:5f:8a:b7:15:b0:2e:54:e4:43:dd:17:88:52:ae:
+         55:94:1a:2f:07:35:d1:03:d8:df:7c:bb:c4:1b:50:f3:b3:7d:
+         29:5d:46:97:2f:2f:f7:42:18:b3:37:19:85:62:97:c0:16:62:
+         ab:e3:3e:fd:ef:e8:25:5a:72:85:3a:22:ac:b7:80:07:8b:ed:
+         c7:2f:2e:79:1c:19:b3:93:3a:65:aa:21:a0:fc:7f:11:82:54:
+         b7:40:1f:21
+-----BEGIN CERTIFICATE-----
+MIIDXDCCAkSgAwIBAgIQQaIvhIm5aX1xIsd5meDe0DANBgkqhkiG9w0BAQsFADAX
+MRUwEwYDVQQDDAxSZWRWZWN0b3ItQ0EwHhcNMjYwNTEzMTIyMTI4WhcNMjkwNDI3
+MTIyMTI4WjAXMRUwEwYDVQQDDAxSZWRWZWN0b3ItQ0EwggEiMA0GCSqGSIb3DQEB
+AQUAA4IBDwAwggEKAoIBAQC78N1HhgJvt7JITTYyTDmyyXCOJfVFGUjXgNFBVyb8
+E1d5Jv2w9mFGwMljHBOFWMD+sUqvj7AUOQWhG7xiZ7pfsJ3tM+F3Wb78EgmY2qEf
+FpxwBwCxkXmBeACb7o0VlENt2syxk3AzzWQ+Kh1VnGCKs9lfH7/VXoh3Oar8VeDQ
+u1UjjUgKGH242GjdsLDKJuJ6ScXrlWTEHXVAFoapsIhUIq/fx1sT/pTJ8IPYP7Vl
+j5diZXU9rHRbgZxK822i6FrEuTwqFn3y8tUUFxC873ndwKFsswh1Ec0LRot36Bk6
+5xrIfdTBsrdMnXqahQG7pI2lxh08Jb/UHV1+ai74/M8fAgMBAAGjgaMwgaAwCQYD
+VR0TBAIwADAdBgNVHQ4EFgQU+LMZIEN+0gRt0UwrwlXT2oSNXXYwUgYDVR0jBEsw
+SYAUAQCqO7dj4JY+VTBHXvnuBlIrAyKhG6QZMBcxFTATBgNVBAMMDFJlZFZlY3Rv
+ci1DQYIUbZ4sB3NM4dslG7ylOIT3/tdS9vswEwYDVR0lBAwwCgYIKwYBBQUHAwIw
+CwYDVR0PBAQDAgeAMA0GCSqGSIb3DQEBCwUAA4IBAQAiS46fWrBL3N3gI2TMjoTg
+ahl88VS+70VEHOJd+ftOGRn5lYXnBtKga+YIEyQqeUTefDRzfJ9JNQ+YWfVJme7K
+HEcrV3ZLGXuLSaFpH4qW3GrzTaj+b6wcd073uU7PdtEG77bqmX98CV/dtSgkCwAh
+uZEIOY6gnXuWtO/TmzTdQripjjtdED2N5w+nkRQlhrblaBsISSRjwzwrHwpGHICd
+tsK/xPsoX4q3FbAuVORD3ReIUq5VlBovBzXRA9jffLvEG1Dzs30pXUaXLy/3Qhiz
+NxmFYpfAFmKr4z797+glWnKFOiKst4AHi+3HLy55HBmzkzplqiGg/H8RglS3QB8h
+-----END CERTIFICATE-----
