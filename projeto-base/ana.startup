@@ -2,7 +2,7 @@ ifconfig eth0 6.6.6.100/24 up
 route add default gw 6.6.6.1
 
 #instalar OpenVPN
-apt-get update && apt-get install -y openvpn
+#apt-get update && apt-get install -y openvpn
 
 #criar device TUN
 mkdir -p /dev/net

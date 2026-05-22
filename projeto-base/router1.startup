@@ -16,7 +16,7 @@ rm -rf /shared/vpn-ana /shared/vpn-bento
 
 
 # === Instalar OpenVPN + easy-rsa ===
-apt-get update && apt-get install -y openvpn easy-rsa
+#apt-get update && apt-get install -y openvpn easy-rsa
 
 #preparar easy-rsa
 cp -r /usr/share/easy-rsa /etc/openvpn/
