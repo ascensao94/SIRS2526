@@ -9,3 +9,37 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 
 # Tudo o que vai para fora (Internet/Cloud) vai para o router1
 route add default gw 16.2.2.1
+
+#requisito 1 firewall- política drop por default
+iptables -P FORWARD DROP
+
+#requisito 9, segunda política mais forte de drop, tem que ver antes das políticas de permissão
+iptables -A FORWARD -d 16.2.2.255 -j DROP   #drop acesso a broadcast da rede 16.2.2.0
+iptables -A FORWARD -d 16.2.3.255 -j DROP   #drop acesso a broadcast da rede dev
+iptables -A FORWARD -d 16.2.4.255 -j DROP   #drop acesso a broadcast da rede corporate
+iptables -A FORWARD -d 16.2.5.255 -j DROP   #drop acesso a broadcast da rede attack
+iptables -A FORWARD -d 16.2.6.255 -j DROP   #drop acesso a broadcast da rede gpu
+
+
+#primeira política de permissão, mais geral logo tem que vir primeiro. Permitir tráfego de resposta.
+iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+#requisito 2
+iptables -A FORWARD -p icmp -j ACCEPT #Permitir todo o trafego ICMP
+iptables -A FORWARD -p udp --dport 33434:33534 -j ACCEPT #Traceroute utiliza pacotes UDP neste intervalo de portos
+
+#requisito 3
+#iptables -A FORWARD -d 20.4.3.2 -p tcp --dport 80 -j ACCEPT #verificar que acesso HTTP funciona sem esta linha
+
+#requisito 4
+iptables -A FORWARD -s 16.2.3.0/24 -d 16.2.4.0/24 -p tcp --dport 22 -j ACCEPT   #permitir ssh devserver1- > corporate
+iptables -A FORWARD -s 16.2.5.0/24 -d 16.2.4.0/24 -p tcp --dport 22 -j ACCEPT  #permitir ssh  atackserver1-> corporate
+iptables -A FORWARD -s 16.2.6.0/24 -d 16.2.4.0/24 -p tcp --dport 22 -j ACCEPT  #permitir ssh gpuserver1 -> corporate
+
+iptables -A FORWARD -s 16.2.4.0/24 -d 16.2.3.0/24 -p tcp --dport 22 -j ACCEPT #permitir ssh corporate -> devserver1
+iptables -A FORWARD -s 16.2.4.0/24 -d 16.2.5.0/24 -p tcp --dport 22 -j ACCEPT #permitir ssh corporate -> atackserver1
+iptables -A FORWARD -s 16.2.4.0/24 -d 16.2.6.0/24 -p tcp --dport 22 -j ACCEPT #permitir ssh corporate -> gpuserver1
+
+#requisito 5
+iptables -A FORWARD -s 16.2.4.0/24 -d 20.4.3.0/24 -p tcp --dport 22 -j ACCEPT   #permitir acesso corporate -> cloud
+iptables -A FORWARD -s 16.2.4.0/24 -p tcp --dport 80 -j ACCEPT  #permitir acesso corporate -> servidores web Internet
