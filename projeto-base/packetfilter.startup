@@ -22,6 +22,9 @@ iptables -A FORWARD  -i eth0 -s 16.2.0.0/20 -j DROP
 #primeira política de permissão, mais geral logo tem que vir primeiro. Permitir tráfego de resposta.
 iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
 
+#Permitir tráfego VPN de estabelecimento de sessão
+iptables -A FORWARD -s 10.8.0.0/24 -d 16.2.4.0/24 -j ACCEPT #tráfego VPN ana/bento -> corporate
+
 #requisito 2
 iptables -A FORWARD -p icmp -j ACCEPT #Permitir todo o trafego ICMP
 iptables -A FORWARD -p udp --dport 33434:33534 -j ACCEPT    #Traceroute utiliza pacotes UDP neste intervalo de portos
