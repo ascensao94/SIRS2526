@@ -1,0 +1,11 @@
+FROM kathara/quagga
+
+# Instalar snort sem prompts interativos
+# DEBIAN_FRONTEND=noninteractive evita que o instalador do snort
+# pergunte qual é a HOME_NET (vamos configurar isso no snort.conf)
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends snort && \
+    rm -rf /var/lib/apt/lists/*
+
+# Garantir que o diretório de logs existe
+RUN mkdir -p /var/log/snort

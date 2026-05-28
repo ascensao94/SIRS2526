@@ -1,2 +1,17 @@
 ifconfig eth0 16.2.4.2/24 up
 route add default gw 16.2.4.254
+
+# ============================================
+# Arranque do Snort — IDS na rede corporate
+# ============================================
+# Executa o Snort em modo IDS (Network Intrusion Detection System)
+# Monitoriza a interface eth0 (ligada ao switch2/hub)
+# Usa a configuração em /etc/snort/snort.conf
+#
+# Parâmetros:
+#   -A console  → envia alertas para stdout (consola da VM)
+#   -q          → modo silencioso (suprime banner de arranque)
+#   -c          → caminho para o ficheiro de configuração
+#   -i eth0     → interface de rede a monitorizar
+#   &           → executa em background (não bloqueia o startup)
+snort -A console -q -c /etc/snort/snort.conf -i eth0 
